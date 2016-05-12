@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  
+<head>
+  <meta charset="utf-8">
+  
+  <title>【面试初体验】今日头条面试 | Kathy&#39;s Tech Blog</title>
+  <meta name="author" content="Kathy Miao">
+  
+  <meta name="description" content="Kathy Miao的技术博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="【面试初体验】今日头条面试"/>
+  <meta property="og:site_name" content="Kathy&#39;s Tech Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <meta http-equiv="Content-Language" content="en"/>
+  
+
+  <link href="/img/favicon.png" rel="icon">
+  
+    <link rel="apple-touch-icon" href="/img/apple-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-icon.png">
+    
+
+  <link rel="alternate" href="/atom.xml" title="Kathy&#39;s Tech Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <style type="text/css">
+  /* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2) */
+body{ -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+
+  
+
+  
+    article .post-content-index .entry{max-height: 620px; overflow:hidden;}
+  
+</style>
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'null', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+
+
+
+
+  
+    
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+    
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+
+  
+
+
+
+</head>
+
+
+<body>
+  <header id="header"><div class="padding inner">
+	<div class="alignleft logo">
+	  <h1><a href="/">Kathy&#39;s Tech Blog</a></h1>
+	</div>
+	<nav id="main-nav" class="alignright">
+		<input type="checkbox" id="toggle" />
+		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
+	  <ul class="menu">
+	    
+	      <li><a href="/">Home</a></li>
+	    
+	      <li><a href="/archives">Archives</a></li>
+	    
+	    
+	  </ul>
+	</nav>
+	<div class="clearfix"></div>
+</div>
+</header>
+  <div id="page-heading-wrap">
+  	<div class="inner">
+      <div class="padding">
+    		
+          <h1>【面试初体验】今日头条面试</h1>
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2015-09-02T09:31:27.000Z">2015-09-02</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Kathy Miao</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+            </li>
+          </ul>
+        
+      </div>
+  	</div>
+  </div>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper" class="padding"><article class="post">
+  
+  
+    <div class="post-content">
+  
+      
+      <div class="entry">
+        
+          <p>回国半个月的准海带，今天体验了一下第一场技术面试。首先是一套题目，30分钟左右的时间根据自己的水平选难题回答，答完之后之后才进行面试。面试官问了很多基础问题，也很多没能回答上。略受打击。。。</p>
+<hr>
+<p>后悔试题没拍照，根据回忆整理：</p>
+<h2 id="CSS题目"><a href="#CSS题目" class="headerlink" title="CSS题目"></a>CSS题目</h2><p>1.上下左右居中</p>
+<p>这个题面试前才看过，但问到还是不能说清楚，还是基础有硬伤<br>思路为绝对定位，在宽高一定的情况下，上下设置为50%。之后设置margin为负值，margin-top和margin-left为自身高度和宽度的一半，将位置拉回中间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	width:400px;</span><br><span class="line">	height:400px;</span><br><span class="line">	top:50%;</span><br><span class="line">	left:50%;</span><br><span class="line">	margin:-200px 0 0 -200px;</span><br><span class="line">	border:1px solid #008800;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>2.两栏，左边固定100px，右边自适应</p>
+<p>其实做布局这个用的最多最常见，我也说的蛮自信的，可惜我把两个思路的属性说混了。<br>第一个思路是左边用float:left，右边用margin-left为左栏的宽度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	width:100px;</span><br><span class="line">	border: solid #999 1px;</span><br><span class="line">&#125;</span><br><span class="line">.right&#123;</span><br><span class="line">	margin-left: 100px;</span><br><span class="line">	border: solid #777 1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二个思路略复杂，右栏width:100%,float:left,但是这样就会超出屏幕的宽度，于是用负值margin拉回来。但这就出现另一个问题，由于右栏缩到左栏里，所以左栏会遮盖右栏的一部分，所以在右栏内部再镶嵌一层，margin-left为左栏的宽度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	width:100px;</span><br><span class="line">	border: solid #999 1px;</span><br><span class="line">	margin-right: -100%;</span><br><span class="line">&#125;</span><br><span class="line">.right&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	width:100%;</span><br><span class="line">	border: solid #777 1px;</span><br><span class="line">&#125;</span><br><span class="line">.content&#123;</span><br><span class="line">	margin-left: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>补充：</strong>第三种方式是在整理下面题目的时候发现的，用display:table-cell的自适应。<br>思路还是，因为table-cell的自适应，将右栏设的尽可能的大。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	width:100px;</span><br><span class="line">	border: solid #999 1px;</span><br><span class="line">&#125;</span><br><span class="line">.right&#123;</span><br><span class="line">	display: table-cell;</span><br><span class="line">	width:3000px;</span><br><span class="line">	border: solid #777 1px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>3.盒模型</p>
+<p>盒模型可以帮助块级元素的定位和计算面积，简单来说W3C的盒模型包括content、padding、border。而IE得盒模型则有些不同，表现在设置宽高的时候，W3C模型下只包含content区域，而IE包括所有区域。<br>这样，在IE下，设置了宽高之后可以很放心的设定padding，但是对于W3C模型下，设置了宽高之后还要计算padding和border的区域。因此有一个方法叫做box-sizing:border-box。border-box将border和padding区域一同算进设定的宽高内。这样的话添加如下代码，就可以设定padding而用不担心超出设置区域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    box-sizing:border-box;</span><br><span class="line">    -moz-box-sizing:border-box; /* Firefox */</span><br><span class="line">    -webkit-box-sizing:border-box; /* Safari */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>4.几种方法生成三个并排的大小相等的元素</p>
+<p>这个问题让我有点蒙，首先想到的是三个元素都用百分比控制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right,.middle&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	width:33.3%</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实还有可以用display:inline-block。回家以后尝试了一下，发现问题是如果这几个元素没有在代码里写在一行，那么最后展现出来的是最后一个元素会被挤到下面一行。<br>大神男友告诉我hack方法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">margin-right: -4px//可以按照实际调整。</span><br></pre></td></tr></table></figure>
+<p>关于inline-block缝隙，推荐一篇文章：<a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">去除间距</a></p>
+<p>还有一个方法为tabel-cell，这种方法就是将每一个元素设置的尽可能的大，但由于自适应的特性，这三个元素还是会乖乖地等分的排在一行里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,.middle, .right&#123;</span><br><span class="line">    display:table-cell;</span><br><span class="line">	width:3000px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><em>接着昨天的继续补充</em></p>
+<p>5.CSS3的新特性用过哪些</p>
+<p>对于我来说最常用当然是border-radius，让圆角成为方便的存在。<br>然而他问第二个问题：怎样将方的通过圆角变成圆的？<br>其实只要</p>
+<pre><code>border-radius:50%;
+</code></pre><p>就好了。可惜当时我怕这个不能用百分比，于是说如果50的宽高，半径为25就好。其实这个也没错啦，但也看的出我基础不扎实。</p>
+<p>除此之外，box-shadow也是咱常用的属性之一。设置水平、垂直的位移，阴影的模糊、尺寸还有颜色，就可以为元素添加阴影。</p>
+<pre><code>box-shadow: 2px 2px 3px #777;
+</code></pre><p>然后我也提了一下border-image这个好用又漂亮的属性。通过设置图片路径，图片的切割方式、还有边框的宽度、溢出，以及平铺或拉伸等呈现方式，可以做出一个漂亮精致的边框。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-image: url(border-image.png) 30/10px/10px round;</span><br></pre></td></tr></table></figure>
+<p>关于border-image的每一项属性的用法和限制，可以参考我大神男友的文章<a href="http://t.zjy.name/archives/css3-border-image.html" target="_blank" rel="external">CSS 3 border-image 属性详解</a></p>
+<p>面试官还问到了<strong>动画</strong>：transition、transform和animation的区别？<br>可惜我目前并没有用CSS做过动画【摊手。。<br>他专门问到了这个问题，说明CSS3的动画是应用较多的，回来立刻学习。</p>
+<p>transform是指转换，可以将元素移动、旋转、倾斜、拉伸。</p>
+<p>translate()，从当前位置移动到由给定left和top值的位置。这个例子中，div向右下移动，如果想要往左上移动，则要设置为负值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    transform: translate(50px,100px);</span><br><span class="line">    -ms-transform: translate(50px,100px);		/* IE 9 */</span><br><span class="line">    -webkit-transform: translate(50px,100px);	/* Safari and Chrome */</span><br><span class="line">    -o-transform: translate(50px,100px);		/* Opera */</span><br><span class="line">    -moz-transform: translate(50px,100px);		/* Firefox */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>rotate()，将元素旋转到给定角度，单位为deg（degree角度），在这个例子中为顺时针30度。负值的话为逆时针旋转。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    transform: rotate(30deg);</span><br><span class="line">    -ms-transform: rotate(30deg);		/* IE 9 */</span><br><span class="line">    -webkit-transform: rotate(30deg);	/* Safari and Chrome */</span><br><span class="line">    -o-transform: rotate(30deg);		/* Opera */</span><br><span class="line">    -moz-transform: rotate(30deg);		/* Firefox */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>skew() ，将元素倾斜到给定角度，单位也是deg，分别围绕着X轴和Y轴翻转。这个例子中，在X轴顺时针翻转30度，Y轴顺时针翻转20度，负值为逆时针翻转。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    transform: skew(30deg,20deg);</span><br><span class="line">    -ms-transform: skew(30deg,20deg);	/* IE 9 */</span><br><span class="line">    -webkit-transform: skew(30deg,20deg);	/* Safari and Chrome */</span><br><span class="line">    -o-transform: skew(30deg,20deg);	/* Opera */</span><br><span class="line">    -moz-transform: skew(30deg,20deg);	/* Firefox */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>scale()，将元素拉伸到指定的倍数，同样设定了X与Y两个方向。这个例子中把宽度拉伸2倍，高度拉伸4倍。有意思的是，负值不是缩小，而是翻转，既水平翻转和垂直翻转。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    transform: scale(2,4);</span><br><span class="line">    -ms-transform: scale(2,4);	/* IE 9 */</span><br><span class="line">    -webkit-transform: scale(2,4);	/* Safari 和 Chrome */</span><br><span class="line">    -o-transform: scale(2,4);	/* Opera */</span><br><span class="line">    -moz-transform: scale(2,4);	/* Firefox */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>transform并没有变化的过程，而是直接生成最终效果。transform还有3D方法，就是多了一个Z轴（Opera不支持）</p>
+<ul>
+<li>transition是指过渡，可以动画般显示出一个从样式到样式之间的过渡。</li>
+</ul>
+<p>上面说过transform没有变化的过程，这样一来就可以动画显示出各种酷炫的效果。<br>transform的属性包括一个你设定过渡的CSS属性，持续时间，时间曲线还有过渡开始的时间。</p>
+<p>比较麻烦的写法，每一项属性单独写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    transition-property: width;</span><br><span class="line">    transition-duration: 1s;</span><br><span class="line">    transition-timing-function: linear;</span><br><span class="line">    transition-delay: 2s;</span><br><span class="line">    /* Firefox 4 */</span><br><span class="line">    -moz-transition-property:width;</span><br><span class="line">    -moz-transition-duration:1s;</span><br><span class="line">    -moz-transition-timing-function:linear;</span><br><span class="line">    -moz-transition-delay:2s;</span><br><span class="line">    /* Safari 和 Chrome */</span><br><span class="line">    -webkit-transition-property:width;</span><br><span class="line">    -webkit-transition-duration:1s;</span><br><span class="line">    -webkit-transition-timing-function:linear;</span><br><span class="line">    -webkit-transition-delay:2s;</span><br><span class="line">    /* Opera */</span><br><span class="line">    -o-transition-property:width;</span><br><span class="line">    -o-transition-duration:1s;</span><br><span class="line">    -o-transition-timing-function:linear;</span><br><span class="line">    -o-transition-delay:2s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单的写法就是将属性都写在transition中。下面例子中包括了之前我们将transform的旋转，效果比较酷炫。（背景用色有点小私心，不过过渡很漂亮<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">    background:lavender;</span><br><span class="line">    transition:width 2s, height 2s, background 2s;</span><br><span class="line">    -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */</span><br><span class="line">    -webkit-transition:width 2s, height 2s, -webkit-transform 2s, background 2s; /* Safari and Chrome */</span><br><span class="line">    -o-transition:width 2s, height 2s, background 2s, -o-transform 2s; /* Opera */</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line">div:hover&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    height:200px;</span><br><span class="line">    background:LightSeaGreen;</span><br><span class="line">    transform:rotate(180deg);</span><br><span class="line">    -moz-transform:rotate(180deg); /* Firefox 4 */</span><br><span class="line">    -webkit-transform:rotate(180deg); /* Safari and Chrome */</span><br><span class="line">    -o-transform:rotate(180deg); /* Opera */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>animation，用@keyframes规则做动画效果。</li>
+</ul>
+<p>如果说transition是过渡中的动画效果，那么animation就是专门做动画的。transition是animation的简化，是当属性发生变化的时候，触发过渡动画。就是上面例子中hover的时候，css的属性变化了，那么在transition里面绑定过得属性动画过渡过去。<br>animation就复杂多了：@keyframes可以有from to，也可以是百分比表示时间帧。</p>
+<p>from-to<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@keyframes myfirst&#123;</span><br><span class="line">    from &#123;background: lavender;&#125;</span><br><span class="line">    to &#123;background: LightSeaGreen;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>百分比</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@keyframes myfirst&#123;</span><br><span class="line">    0%   &#123;background: purple;&#125;</span><br><span class="line">    25%  &#123;background: lavender;&#125;</span><br><span class="line">    50%  &#123;background: cyan;&#125;</span><br><span class="line">    75% &#123;background: LightSeaGreen;&#125;</span><br><span class="line">    100% &#123;background:purple;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后再将这个@keyframes绑定到一个元素上。<br>animation提供了更多属性，包括@keyframes名字、持续时间、速度曲线、开始时间、播放次数等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    animation: myfirst 5s linear 2s infinite alternate;</span><br><span class="line">    /* Firefox: */</span><br><span class="line">    -moz-animation: myfirst 5s linear 2s infinite alternate;</span><br><span class="line">    /* Safari 和 Chrome: */</span><br><span class="line">    -webkit-animation: myfirst 5s linear 2s infinite alternate;</span><br><span class="line">    /* Opera: */</span><br><span class="line">    -o-animation: myfirst 5s linear 2s infinite alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有了这几个属性，css可以在很多时候取代flash和动图了。</p>
+<hr>
+<h2 id="JavaScript题目"><a href="#JavaScript题目" class="headerlink" title="JavaScript题目"></a>JavaScript题目</h2><p>可能因为笔试中JS题目较多，所以面试的时候没有问太多。</p>
+<p>1.优化代码，事件委托</p>
+<p>笔试的题目上给了一段代码让我优化。具体代码记不清，大概是获取<a>的元素，然后循环为每一个添加mouseover和mouseout事件。</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var elementList=document.querySelectorAll(&quot;a&quot;);</span><br><span class="line">var listLen=elementList.length;</span><br><span class="line">function handler (element,color)&#123;</span><br><span class="line">	return function()&#123;</span><br><span class="line">		element.style.color=color;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line">//添加事件方法</span><br><span class="line">function addEvent(element,type,handler)&#123;</span><br><span class="line">	if(element.addEventListener)&#123;</span><br><span class="line">		element.addEventListener(type,handler,false);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(element.attachEvent)&#123;</span><br><span class="line">		element.attachEvent(&quot;on&quot;+type,handler);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//循环为元素添加事件</span><br><span class="line">for(i=0;i&lt;listLen;i++)&#123;</span><br><span class="line">	addEvent(elementList[i],&quot;mouseover&quot;,handler(elementList[i],&quot;red&quot;));</span><br><span class="line">	addEvent(elementList[i],&quot;mouseout&quot;,handler(elementList[i],&quot;black&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后面试官又问我为什么事件委托效率更高</p>
+<p>还是基础硬伤，我只是大概知道什么是事件委托，对于原理还不了解。于是回来又查参考书《Javascript高级程序设计》</p>
+<blockquote>
+<p>事件委托利用了事件冒泡，指定一个事件处理程序，就可以管理某一个类型的所有事件。</p>
+</blockquote>
+<p>书上解释，在DOM树中尽量高的层次上添加一个事件处理程序。那么在他的子孙元素中的事件，最终都会冒泡到这个层次中。例如，列表里有两个项目，我们不要分别设置每一个项目点击时的事件，而是在上层中建立事件委托。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;link&quot;&gt;</span><br><span class="line">    &lt;li id=&quot;home&quot;&gt;首页&lt;/li&gt;</span><br><span class="line">   	&lt;li id=&quot;resume&quot;&gt;简历&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">var link = document.querySelector(&quot;#link&quot;);</span><br><span class="line">//添加事件</span><br><span class="line">function addEvent(element,type,handler)&#123;</span><br><span class="line">	if(element.addEventListener)&#123;</span><br><span class="line">		element.addEventListener(type,handler,false);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(element.attachEvent)&#123;</span><br><span class="line">		element.attachEvent(&quot;on&quot;+type,handler);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//获取事件对象，因为奇葩的IE，事件对象要用window.event</span><br><span class="line">function getEvent(event)&#123;</span><br><span class="line">    return event ? event : window.event;</span><br><span class="line">&#125;</span><br><span class="line">//获取事件目标</span><br><span class="line">function getTarget(event)&#123;</span><br><span class="line">    return event.target || event.srcElement;</span><br><span class="line">&#125;</span><br><span class="line">//为外层ul添加事件委托</span><br><span class="line">addEvent(link,&quot;click&quot;,function(event)&#123;</span><br><span class="line">    event = getEvent(event);</span><br><span class="line">    var target = getTarget(event);</span><br><span class="line">    //为每一个li添加事件</span><br><span class="line">   	switch(target.id)&#123;</span><br><span class="line">       	case &quot;home&quot;:</span><br><span class="line">       	    target.innerHTML=&quot;首页，&lt;a href=&apos;http://myj.name/&apos;&gt;Welcome to my home&lt;/a&gt;&quot;</span><br><span class="line">	    break;</span><br><span class="line">	    case &quot;resume&quot;:</span><br><span class="line">	        location.href = &quot;http://katherina-miao.github.io/resume/&quot;;</span><br><span class="line">	    break;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>2.添加一个类似email中checklist的双向联动</p>
+<p>起初，我的内心是崩溃的。。。<br>这个题刚开始都没搞清楚是做什么的，一直到做完整个卷子我才又回头看了看这个题。时间有限，都没来得及想就往纸上写。<br>其实这个题是让我做一个类似email里选择发件人的东西，勾选的时候添加到发件人，取消勾选的时候从发件人里面删除。由于是双向联动，因此要在发件人里点击的时候可以删除，并且取消勾选。好像说的有点乱，看下面代码。</p>
+<p>其实主要还是事件绑定，然后添加节点，改变属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;showbox&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;email&quot; value=&quot;i@myj.name&quot;&gt;Kathy&lt;/input&gt;</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;email&quot; value=&quot;i@zjy.name&quot;&gt;Visper&lt;/input&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">var emails=document.querySelectorAll(&quot;[name=email]&quot;);</span><br><span class="line">var showBox=document.querySelector(&quot;.showbox&quot;);</span><br><span class="line">var length=emails.length;</span><br><span class="line">//添加事件</span><br><span class="line">function addEvent(element,type,handler)&#123;</span><br><span class="line">	if(element.addEventListener)&#123;</span><br><span class="line">		element.addEventListener(type,handler,false);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(element.attachEvent)&#123;</span><br><span class="line">		element.attachEvent(&quot;on&quot;+type,handler);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">//循环，为每个checkbox添加事件</span><br><span class="line">for(var i=0;i&lt;length;i++)&#123;</span><br><span class="line">	addEvent(emails[i],&quot;click&quot;,function()&#123;</span><br><span class="line">        //判断是否被选中</span><br><span class="line">		if(this.checked)&#123;</span><br><span class="line">			var Emailvalue = this.value;</span><br><span class="line">			var newBtn=document.createElement(&quot;input&quot;);</span><br><span class="line">			newBtn.setAttribute(&quot;type&quot;,&quot;button&quot;);</span><br><span class="line">			</span><br><span class="line">			newBtn.value=Emailvalue;</span><br><span class="line">			showBox.appendChild(newBtn);</span><br><span class="line">		&#125;</span><br><span class="line">        //若取消勾选，则删除相应的button</span><br><span class="line">		else&#123;</span><br><span class="line">			var Emailvalue = this.value;</span><br><span class="line">			var emailBtn=document.querySelector(&quot;[type=button][value=&apos;&quot;+Emailvalue+&quot;&apos;]&quot;);</span><br><span class="line">			showBox.removeChild(emailBtn);</span><br><span class="line">		&#125;</span><br><span class="line">        //每次重新调用以更新button</span><br><span class="line">		startBtn();</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">//获取button列表，为button添加事件</span><br><span class="line">function startBtn()&#123;</span><br><span class="line">	var emailBtn=document.querySelectorAll(&quot;[type=button]&quot;);</span><br><span class="line">	if(emailBtn.length)&#123;</span><br><span class="line">		for(var i=0;i&lt;emailBtn.length;i++)&#123;</span><br><span class="line">			addEvent(emailBtn[i],&quot;click&quot;,function()&#123;</span><br><span class="line">				var btnvalue=this.value;</span><br><span class="line">				var cancelChoose=document.querySelectorAll(&quot;[value=&apos;&quot;+btnvalue+&quot;&apos;]&quot;);</span><br><span class="line">				//删除button并取消勾选相应checkbox</span><br><span class="line">				for(var j=0;j&lt;cancelChoose.length;j++)&#123;</span><br><span class="line">					if(cancelChoose[j].getAttribute(&quot;type&quot;)==&quot;button&quot;)&#123;</span><br><span class="line">						showBox.removeChild(cancelChoose[j]);</span><br><span class="line">					&#125;</span><br><span class="line">					else if(cancelChoose[j].getAttribute(&quot;type&quot;)==&quot;checkbox&quot;)&#123;</span><br><span class="line">						cancelChoose[j].checked=false;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>3.Array的方法</p>
+<p>面试官问到Array有几种方法，这个我在面试前曾经简单整理过，所以感觉回答也比较满意。</p>
+<p>isArray()，判断是否为Array类型。<br>join()，将Array类型转换为字符串类型,并用join内的符号间隔开。</p>
+<p>队列，栈的用法<br>push()，将数据项放到数组的后面。<br>pop()，将数组的最后一项删除并返回。<br>shift()，将数组的第一项删除并返回。<br>unshift()，将数据项放到数组的前面。</p>
+<p>重排序的方法<br>reverse()，将数组逆序排列。<br>sort()，将数组由小到大排列。默认是按照字符串比较，也就是说15比5小。要按照数字排列的话，要设定方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var numlist = [0, 5, 15, 20, 10];</span><br><span class="line">function compare (value1, value2)&#123;</span><br><span class="line">	value2-value1;</span><br><span class="line">&#125;</span><br><span class="line">var listsort = numlist.sort(compare);</span><br><span class="line">alert( listsort );//0, 5, 10, 15, 20 按照数值从小到大</span><br></pre></td></tr></table></figure>
+<p>操作Array的方法<br>concat()，在原有meat数组上创建新数组<br>slice()，截取从指定位置开始到结束为止(不包含结束位置)的数组项赋给新数组，如果没有第二个参数，则截取从指定位置开始到结束的数组项赋给新数组<br>splice()，从指定位置(第一个参数)删除指定个数(第二个参数)并插入指定项目(’第三个参数”)</p>
+<p>位置方法<br>indexOf()，从前向后查找位置索引。<br>lastIndexOf()，从后向前查找位置索引。<br>这两个方法支持第二个参数，既指定位置然后按照方法向前或向后查找位置。</p>
+<p>遍历方法<br>every()中，每一项运行给定函数，每一项都返回true,否则返回true。<br>filter()中，每一项运行给定函数，返回true的项。<br>forEach()中，每一项运行给定函数，无返回。<br>map()中，每一项运行给定函数，返回调用结果组成的数组。<br>some()中，每一项运行给定函数，任意一项返回true，否则返回true。 </p>
+<p>归并方法<br>reduce()和reduceRight()都接受四个参数：前一个值，当前值，索引和数组对象。<br>reduce()是从左向右归并，当第一个值和第二个值运行过之后，结果将作为下一次运行的前一个值。<br>reduceRight()则是从右向左，归并方式与reduce()一样。</p>
+<hr>
+<h2 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h2><p>算法题就一个，给定字符串“abcba”，处理得到第一个不重复字母。</p>
+<p>对算法实在只是了解个皮毛，所以这个问题估计最后还是写错了。回来后自己写了一个，可以得到答案，但也不知道是不是最优。<br>思路是首先将字符转换成数组，然后从小到大排序，然后循环对每一个数组项比较前后。因为曾经排序，如果是不重复的那么前后应该都与它不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var letterString=&quot;abcba&quot;;</span><br><span class="line">var letterArray=Array.prototype.slice.apply(letterString);</span><br><span class="line">var arrayLen=letterArray.length;</span><br><span class="line">var sortArray=letterArray.sort();</span><br><span class="line">for(var i=0;i&lt;arrayLen;i++)&#123;</span><br><span class="line">	if(sortArray[i]!=sortArray[i+1]&amp;&amp;sortArray[i]!=sortArray[i-1])&#123;</span><br><span class="line">		alert(sortArray[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>1.AJAX过程，AJAX中如何区分get和post，get和post的区别</p>
+<p>面试官在这个方面一气儿问了三个问题，可能因为我没一个问题都没能答的全面。</p>
+<p>AJAX算是听人说的最多的一个技术，无需加载整个页面的情况下进行局部更新。<br>再用AJAX技术与服务器交换数据时，首先创建一个XMLHttpRequest对象，在特立独行的IE里是ActiveXObject。</p>
+<p>接着我们用open()方法和send()方法，使用get和post会有些区别。然后，请求会发送给服务器，服务器会响应触发onreadystatechange事件，当readyState=4（请求完成）且status=200时，说明服务器已经就绪。然后用responseText或responseXML属性去获得字符串或XML格式的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var xmlhttp;</span><br><span class="line">if (window.XMLHttpRequest)&#123;</span><br><span class="line">    xmlhttp=new XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    //奇葩的IE5、6</span><br><span class="line">    xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.open(&quot;GET&quot;,&quot;response.php&quot;,true);</span><br><span class="line">xmlhttp.send();</span><br><span class="line"></span><br><span class="line">xmlhttp.onreadystatechange=function()&#123;</span><br><span class="line">    if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200)&#123;</span><br><span class="line">        document.getElementById(&quot;showBox&quot;).innerHTML=xmlhttp.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>在AJAX中区别get和post，就要详谈open()方法和send()方法。</p>
+<p>get请求常用于向服务器查询信息。</p>
+<p>在get请求中，open()的第一个参数为“get”，第二个参数为URL，第三个参数为是否为异步。由于get请求的URL中通常带有参数，这些参数必须要使用encodeURIComponent()方法进行编码，否则会有格式错误。这样send()方法内部的参数可以传入null，传入的参数也会转到URL中。</p>
+<p>post请求常用于向服务器提交信息。</p>
+<p>在post请求中，open()的第一个参数为“post”，URL中不含有参数，第三个参数一样。post请求的send()方法中需要传入提交数据，可以使用XML或者字符串。在提交表单时，首先要设定请求头部的Content-Type为 application/x-www-form-urlencoded。</p>
+<pre><code>xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;); 
+</code></pre><p>然后将传入的表单信息序列化，方便后端的程序获取数据。对于表单数据序列化，FormData对象可以直接放入send()内:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form id=“user-info”&gt;</span><br><span class="line">	用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;</span><br><span class="line">	年龄：&lt;input type=&quot;text&quot; name=&quot;年龄&quot;/&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var form = document.getElementById(&quot;user-info&quot;);</span><br><span class="line">xhr.send(new FormData(form));</span><br></pre></td></tr></table></figure>
+<p>前面提过，get方式中url包含参数，而post中url是“干干净净”的。因为用处不同，post在提交内容的时候没有大小限制。而且post在发送时有内容体，那些提交的信息放在内容体内。</p>
+<hr>
+<p>2.JSONP 跨域的特性</p>
+<p>说实话我只在用JQuery的时候用过JSONP，只知道可以跨域，但不知道为什么可以。所以在被问到的时候，脑子又是一蒙。</p>
+<p>由于跨域安全策略，XMLHttpRequest不能跨域请求，这是AJAX的一个主要限制。<br>JSONP是通过<code>&lt;script&gt;</code>元素。因为我们知道，<code>&lt;script&gt;</code>可以跨域引用js文件。返回的数据格式为JSON，创建一个回调函数来相应返回的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var script = document.createElement(&quot;script&quot;);</span><br><span class="line">script.src = &quot;http://tryjson.org?callback=handler&quot;;</span><br><span class="line">document.body.appendChild(script);</span><br><span class="line"></span><br><span class="line">//回调函数</span><br><span class="line">function handler(response)&#123;</span><br><span class="line">    var responseContent=&#123;</span><br><span class="line">        diatotime:response.datetime,</span><br><span class="line">        usedEnergy:response.used.Energy,</span><br><span class="line">        …</span><br><span class="line">    &#125;</span><br><span class="line">    return responseContent；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了JSONP，用img标签也可以跨域通信。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var img = new Image();</span><br><span class="line">img.src = &quot;http://www.example.com/id=123&quot;;</span><br></pre></td></tr></table></figure>
+<p>CORS是跨域请求的另一个方法。在IE浏览器中为XDomainRequest对象，而在其他浏览器中则继续用XMLHttpRequest。区别在于，XDomainRequest对象的open()只有两个参数：请求类型和URL，因为都是异步执行。而其他浏览器在使用open()时，URL要使用绝对路径，既可以跨域请求。</p>
+<p>3.提高网页性能的方法</p>
+<p>因为刚刚问完AJAX，所以首先反应的是使用AJAX部分刷新。然后我想到了CSS精灵，将小图片放在一起减少HTTP请求。然后想到将script和css从外部引入，然后script放在文档底部。</p>
+<p>除此之外，总结一下：在内容上压缩，在请求上减少。压缩图片、脚本和CSS，使用CSS精灵，优化图片，尽量使用<link>引用CSS。在请求上避免重定向，尽量使用AJAX尽量使用GET请求。</p>
+<p>在优化性能方面，我没什么研究，还是由于对底层原理不熟【汗。。</p>
+<hr>
+<p>这次的面试经历整理了一天多，一是因为实在是基础差，每一题都要查资料，编程题要自己试，二是要激励自己。因为自己是很懒的人，不喜欢上网找文章资料。这次面试算是一个鞭策，将自己漏洞补起来。</p>
+<p>希望各路大神评论补充！！本菜鸟道谢~~</p>
+
+        
+      </div>
+      <footer>
+        
+          
+          
+  
+  <div class="tags">
+    <a href="/tags/前端面试/">前端面试</a>
+  </div>
+
+          <div class="share">
+  
+
+    
+
+    
+      <div class="g-plusone"></div>
+
+      <script type="text/javascript">
+        window.___gcfg = {lang: 'en-GB'};
+
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/platform.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+    
+
+    
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="halfer53">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+  
+</div>
+          
+<nav class="article-nav clearfix">
+ 
+ <div class="article-prev" >
+ <a href="/2015/09/05/second-interview/" title="【面试次体验】堆糖前端面试">
+  <i class="fa fa-long-arrow-left"></i>
+  <span>
+  【面试次体验】堆糖前端面试</span>
+</a>
+</div>
+
+
+</nav>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright"><div class="padding">
+	
+	  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:myj.name">
+  </form>
+</div>
+	
+	  
+<div class="widget recent-post">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/05/12/todolist-react/">【练手】Webpack+React开发Todolist项目</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/06/pushState/">【经验总结】pushState＋ajax应用</a>
+      </li>
+    
+      <li>
+        <a href="/2015/09/05/second-interview/">【面试次体验】堆糖前端面试</a>
+      </li>
+    
+      <li>
+        <a href="/2015/09/02/first-interview/">【面试初体验】今日头条面试</a>
+      </li>
+    
+  </ul>
+</div>
+
+	
+	  
+	
+	  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  
+    <a href="/tags/React/">React<small>1</small></a>
+  
+    <a href="/tags/Webpack/">Webpack<small>1</small></a>
+  
+    <a href="/tags/html5/">html5<small>1</small></a>
+  
+    <a href="/tags/javascript/">javascript<small>1</small></a>
+  
+    <a href="/tags/pjax/">pjax<small>1</small></a>
+  
+    <a href="/tags/前端面试/">前端面试<small>2</small></a>
+  
+</div>
+
+	
+</div></aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="padding">
+	<div class="alignleft">
+	  
+	  &copy; 2016 Kathy Miao
+	  
+	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
+	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>
+	</div>
+
+	<div class="alignright">
+		
+		
+		
+		
+		
+		
+		
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+<div class="scroll-top"><i class="fa fa-arrow-circle-up"></i></div></footer>
+  
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+<script type="text/javascript">
+$(window).scroll(function() {
+
+    if($(this).scrollTop() > 400) {
+        $('.scroll-top').fadeIn(200);
+    } else {
+        $('.scroll-top').fadeOut(200);
+    }
+});
+
+$('.scroll-top').bind('click', function(e) {
+    e.preventDefault();
+    $('body,html').animate({scrollTop:0},200);
+});
+</script>
+
+
+</body>
+</html>

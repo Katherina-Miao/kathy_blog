@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+  
+<head>
+  <meta charset="utf-8">
+  
+  <title>【面试次体验】堆糖前端面试 | Kathy&#39;s Tech Blog</title>
+  <meta name="author" content="Kathy Miao">
+  
+  <meta name="description" content="Kathy Miao的技术博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="【面试次体验】堆糖前端面试"/>
+  <meta property="og:site_name" content="Kathy&#39;s Tech Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <meta http-equiv="Content-Language" content="en"/>
+  
+
+  <link href="/img/favicon.png" rel="icon">
+  
+    <link rel="apple-touch-icon" href="/img/apple-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple-icon.png">
+    
+
+  <link rel="alternate" href="/atom.xml" title="Kathy&#39;s Tech Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+  <style type="text/css">
+  /* Tim Pietrusky advanced checkbox hack (Android <= 4.1.2) */
+body{ -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+
+  
+
+  
+    article .post-content-index .entry{max-height: 620px; overflow:hidden;}
+  
+</style>
+
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'null', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+
+
+
+
+  
+    
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+    
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+
+  
+
+
+
+</head>
+
+
+<body>
+  <header id="header"><div class="padding inner">
+	<div class="alignleft logo">
+	  <h1><a href="/">Kathy&#39;s Tech Blog</a></h1>
+	</div>
+	<nav id="main-nav" class="alignright">
+		<input type="checkbox" id="toggle" />
+		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
+	  <ul class="menu">
+	    
+	      <li><a href="/">Home</a></li>
+	    
+	      <li><a href="/archives">Archives</a></li>
+	    
+	    
+	  </ul>
+	</nav>
+	<div class="clearfix"></div>
+</div>
+</header>
+  <div id="page-heading-wrap">
+  	<div class="inner">
+      <div class="padding">
+    		
+          <h1>【面试次体验】堆糖前端面试</h1>
+          <ul>
+            <li>
+              <span class="heading-span">Posted on: </span>
+              <time datetime="2015-09-05T12:06:39.000Z">2015-09-05</time>
+            </li>
+            
+              <li>
+                <span class="heading-span">By: </span>
+
+                
+                  <a href="/">Kathy Miao</a>
+                
+
+              </li>
+            
+            <li>
+              <span class="heading-span">With: </span>
+              
+            </li>
+          </ul>
+        
+      </div>
+  	</div>
+  </div>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper" class="padding"><article class="post">
+  
+  
+    <div class="post-content">
+  
+      
+      <div class="entry">
+        
+          <p>在上一次失败的经历之后，本菜鸟非常努力的梳理羽毛（整理知识点），在两天后参加了堆糖的视频面试。这次面试经历总体来说比较好，可能是查漏补缺起到了效果，大部分的题目都能大体回答出来，加上面试官很nice~~~<br>Anyway，还是把面试过程整理出来。</p>
+<hr>
+<p>首先还是从CSS开始，有遇到与上次面试类似题目的请参考<a href="http://segmentfault.com/a/1190000003508121" target="_blank" rel="external">今日头条前端实习生面试</a></p>
+<h2 id="CSS题目"><a href="#CSS题目" class="headerlink" title="CSS题目"></a>CSS题目</h2><p>1.如何实现一个三栏布局</p>
+<p>三栏布局，问到的时候我以为是左右固定，中间自适应，后来发现他就是想考我float。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right,.middle&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	border: solid 1px #777;</span><br><span class="line">	width: 30%;</span><br><span class="line">	margin:1.55%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后面试官问我，这三个元素float了之后，对下面的元素有影响要怎么处理。</p>
+<p>清除浮动问题我发现是前端面试CSS方面经常问的一个问题，详细可参考文章：<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a>。</p>
+<p>主要的方法有添加多余标签，然后clear: both一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>然后CSS改一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clear&#123;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二个方法是在父层容器添加overflow:auto属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;overflow&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.overflow&#123;</span><br><span class="line">	overflow: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三个方法是用伪类::after</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;clearfix&quot;&gt;</span><br><span class="line">	&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于IE6-7不支持:after，使用 zoom:1触发 hasLayout。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">	display: block;</span><br><span class="line">	content: &quot;&quot;;</span><br><span class="line">	visibility: hidden;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	*zoom:1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>2.position的几种属性</p>
+<p>我发现这个面试官的问题都不算刁钻，position也是在学布局的时候一定要接触到的。常用的position有static、fix、absolute和relative。</p>
+<p>position:static<br>这个static是默认的，对块级框的块格式化，对行级框的行格式化，元素按照块格式化上下文或行格式化上下文正常排版。</p>
+<p>position:relative<br>相对定位，元素正常排版，并可以用top left right bottom进行位置的偏移，然而后面的元素不会调整位置去适应这个相对定位的元素。</p>
+<p>position:absolute<br>绝对定位，元素脱离正常排版，使用top left right bottom相对于第一个非static的父层定位。</p>
+<p>position:fixed<br>与absolute类似，不过使用top left right bottom定位是在视口的固定位置上。</p>
+<hr>
+<p>3.如何实现一个响应式布局</p>
+<p>这个是一个经验题。我原以为他要问我对Bootstrap等类库的使用，加之我从没接触过移动端，对于除了使用过Bootstrap和使用百分比宽度没再尝试过别的。</p>
+<p>面试官说明是要自己写响应式，然后我就说我就是用百分比设置宽度。然后他问半分比相对于谁？</p>
+<p>所以说还是基础硬伤，因为自己做的时候没注意过相对于谁，而且大多是外框，所以就说相对于窗口。面试官一笑，窗口？我说好吧，我再查查。。。顺便查了一下盒模型设置的各个百分比都是相对于谁的。</p>
+<p>CSS中：width、margin和padding百分比是相对于包含块的！<br>一般情况下包含块是父元素，当position: fixed的时候，包含块为视口；当position: absolute的时候，包含块为最近的position不是static的祖先。</p>
+<p>除此之外，响应式布局的方法还有：<br>CSS3 Media Query</p>
+<p>通过在<head>里面插入这段内容，使分辨率在小于1024分辨率的情况下和大于1024分辨率的情况下能响应不同的css文件。</head></p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width; initial-scale=1.0&quot;&gt;
+</code></pre><p>设置原始缩放比例和视窗的大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;common.css&quot; media=&quot;all&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;normalScreen.css&quot; media=&quot;screen and (max-width: 1024px)&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;widthScreen.css&quot; media=&quot;screen and (min-width: 1024px)&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>同样，可以在样式表中镶嵌@media，文章推荐参考<a href="http://www.jiawin.com/response-type-layout-design" target="_blank" rel="external">响应式布局这件小事</a></p>
+<hr>
+<h2 id="Javascript题目"><a href="#Javascript题目" class="headerlink" title="Javascript题目"></a>Javascript题目</h2><p>1.Jquery中$(‘’).click()和$(‘’).on(‘click’)的分别</p>
+<p>我为了学基础，学原生的Javascript，已经很久没碰Jquery了。问到这个问题的时候，我只能很诚实的说我没有考虑过这个问题，如果让我说的话，可能是原生的JS中onclick事件与addEventListener(“click”)的区别。</p>
+<p>在面试完之后，我立刻又上网查了这两个的分别，其实在效果上作用不大，就是说下列代码在实现上并没有很大差距。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#myDiv&quot;).click(function()&#123;</span><br><span class="line">    alert(&quot;clicked&quot;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#myDiv&quot;).on(&quot;click&quot;,function()&#123;</span><br><span class="line">    alert(&quot;clicked&quot;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>不同的是，on()方法可以实现动态绑定。可以将所有的点击事件绑在一个父层元素上，也可以用off()方法解绑定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;body&quot;).on(&quot;click&quot;,&quot;button&quot;,function()&#123;</span><br><span class="line">    var btnValue = this.val();</span><br><span class="line">    alert(btnValue+&quot;clicked&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">//为每一个按钮绑定点击事件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#myDiv&quot;).off(&quot;click&quot;);//解除点击事件绑定</span><br></pre></td></tr></table></figure>
+<hr>
+<p>2.JS实现一个类</p>
+<p>我发现，这个问题也是面试常会问到的，而且我觉得这也是我在学习JS的时候遇到的一个难点。<br>说起类，就要提起原型链的问题，这里直接上例子。对于原型，可以直接参考我大神男友的博文<a href="http://t.zjy.name/archives/javascript-object-oriented-1.html" target="_blank" rel="external">Javascript 面向对象特性(1)——抛弃类</a>、<a href="http://t.zjy.name/archives/javascript-object-oriented-2.html" target="_blank" rel="external">Javascript 面向对象特性(2)——找回类</a>。</p>
+<p>《Javascript高级程序设计》中讲到继承的时候提到了六种方式：原型链、借用构造函数、组合继承、原型式继承、寄生式继承、寄生组合式集成。</p>
+<p>原型链方式的具体用法是创建一个构造函数，然后创建继承这个构造函数的引用类型，将这个引用的原型指向构造函数。在原型链的问题是，Student的原型为Person的实例，那么所有Student的实例会共享它引用类型的属性，所以实例在修改这个属性的时候会导致其他实例的实例都被修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.age=age;</span><br><span class="line">    this.sayName=function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function Student(school)&#123;</span><br><span class="line">	this.school=school;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype= new Person();</span><br></pre></td></tr></table></figure>
+<p>借用构造函数的用法是在一个引用类型中调用构造函数，使用apply()和call()方法可以在函数内部调用构造函数。问题是，对于Student的实例找不到哪些是Person中定义的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.age=age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayName=function()&#123;</span><br><span class="line">	alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line">function Student(name,age,school)&#123;</span><br><span class="line">	Person.call(this,name,age);</span><br><span class="line">	this.school=school;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组合方式是综合了原型链与借用构造函数两种方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.age=age;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayName=function()&#123;</span><br><span class="line">	alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line">function Student(name,age,school)&#123;</span><br><span class="line">	Person.call(this,name,age);</span><br><span class="line">	this.school=school;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype= new Person();</span><br><span class="line">Student.prototype.constructor=Student;</span><br><span class="line"></span><br><span class="line">Student.prototype.saySchool=function()&#123;</span><br><span class="line">	alert(this.school);</span><br><span class="line">&#125;</span><br><span class="line">var instance1=new Student(&quot;Kathy&quot;,&quot;23&quot;,&quot;UQ&quot;);</span><br><span class="line">var instance2=new Student(&quot;Visper&quot;,&quot;24&quot;,&quot;KMUST&quot;);</span><br><span class="line"></span><br><span class="line">instance1.saySchool();//UQ</span><br><span class="line">instance2.sayName();//Visper</span><br></pre></td></tr></table></figure></p>
+<p>原型式继承，方法是通过一个现有的对象创建一个新的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//引自《Javascript高级程序设计》</span><br><span class="line">function object(o)&#123;</span><br><span class="line">    function F()&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    return new F();</span><br><span class="line">&#125;</span><br><span class="line">var person = &#123;</span><br><span class="line">        name: &quot;Kathy&quot;,</span><br><span class="line">        age: &quot;23&quot;</span><br><span class="line">&#125;;</span><br><span class="line">var anotherPerson = Object.create(person);</span><br><span class="line">anotherPerson.name = &quot;Visper&quot;;</span><br><span class="line">anotherPerson.age = &quot;24&quot;;</span><br></pre></td></tr></table></figure>
+<p>寄生式继承的方法是将原型式继承封装在一个方法内，然后再用工厂式的创建对象的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//引自《Javascript高级程序设计》</span><br><span class="line">function object(o)&#123;</span><br><span class="line">    function F()&#123;&#125;</span><br><span class="line">    F.prototype = o;</span><br><span class="line">    return new F();</span><br><span class="line">&#125;</span><br><span class="line">var person = &#123;</span><br><span class="line">    name: &quot;Kathy&quot;,</span><br><span class="line">    age: &quot;23&quot;</span><br><span class="line">&#125;;</span><br><span class="line">function createPerson(original)&#123;</span><br><span class="line">    var clone=object(original); </span><br><span class="line">    clone.sayName=function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;;</span><br><span class="line">    return clone;</span><br><span class="line">￼&#125;</span><br><span class="line">var anotherPerson = createAnother(person);</span><br><span class="line">anotherPerson.name = &quot;Visper&quot;;</span><br><span class="line">anotherPerson.age = &quot;24&quot;;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>2.如何统计一个字符串中哪个字母出现的次数最多</p>
+<p>这个问题又是算法题，而算法题是我相当不擅长的。。。不过有上次选取“字符串中第一个只出现一次的字符”的经验，这次也是比较快的想出了一个方法。不过，也还是不知道这个问题的最快解决办法是什么。</p>
+<p>思路还是将字符串变成数组，然后再sort()排序，之后为每一组字符计算数字，将目前出现次数最多的字符以及其次数记下来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function maxCountValue(string)&#123;</span><br><span class="line">	var letterArray=Array.prototype.slice.apply(string);</span><br><span class="line">	var sortArray=letterArray.sort();</span><br><span class="line">	var arrayLen=letterArray.length;</span><br><span class="line">	var countNow=0,count=0,value=sortArray[0],maxCountValue=&quot;&quot;;</span><br><span class="line">	for(var i=0;i&lt;arrayLen;i++)&#123;</span><br><span class="line">        //判断是否进入下个字符组</span><br><span class="line">		if(value==sortArray[i])&#123;</span><br><span class="line">			countNow=countNow+1;</span><br><span class="line">            //判断是否为最后一组并且判断当前次数以及目前最大次数</span><br><span class="line">			if(i==arrayLen-1&amp;count&lt;countNow)&#123;</span><br><span class="line">				maxCountValue=value;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		else&#123;</span><br><span class="line">            //如果当前次数大于目前最大次数</span><br><span class="line">			if(count&lt;countNow)&#123;</span><br><span class="line">				count=countNow;</span><br><span class="line">				maxCountValue=value;</span><br><span class="line">			&#125;</span><br><span class="line">			value=sortArray[i];</span><br><span class="line">			countNow=0</span><br><span class="line">			countNow=countNow+1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	alert(maxCountValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HTTP题目以及新技术题目"><a href="#HTTP题目以及新技术题目" class="headerlink" title="HTTP题目以及新技术题目"></a>HTTP题目以及新技术题目</h2><p>HTTP题目继续问到了AJAX的问题，上一篇面试题中有整理。</p>
+<p>面试官紧接着有问到form提交和ajax提交的区别？<br>Form在提交的时候，会跳转页面或者原页面刷新。而AJAX是异步的，无需页面刷新而只是部分刷新。<br>Form提交时，JS不是必需的，而且数据按照表单结构提交。AJAX需要JS来实现，而且数据也要用程序处理。</p>
+<hr>
+<p>之后面试官问到开发环境问题：</p>
+<p>1、目前的开发环境是什么<br>曾用PC开发，使用EverEdit；这几个月转用Mac，使用HBuilder</p>
+<p>2、shell操作 命令行用过什么<br>简单的前进到文件目录cd<br>列出当前文件夹内的文件 ls -li<br>改变所有人权限 chown<br>该文件读写模式 chmod</p>
+<p>3、chrome的调试方法<br>Elements中查询元素结构、以及元素的样式<br>Network中查看每个资源的请求反馈时间<br>Sources中调试程序，在左栏程序文件上打断点，并在右侧输入变量名查看变量值的变化<br>Resource中查询Session、Cookie、本地存储及缓存的状态<br>Console中执行函数并查看错误行号或错误代码</p>
+<p>4、代码管理工具使用过么？做哪些操作呢？<br>使用过Git：建立远程仓库，拉取本地仓库，更改之后submit，之后push到远程仓库。曾经Fork过别人的，然后修改过后也是submit再push。<br>说实话我做的个人项目比较多，对于GitHub的使用仅限于提交推送更新代码。所以也是大概的说了一下我的使用情况。</p>
+<hr>
+<p>新技术题目</p>
+<p>接触过什么比较前沿的技术？js框架、模块化 、自动化工具、预编译语言？<br>呃。。呃。。呃。。。</p>
+<p>当时我的反应好尴尬，不过也是实话实说我没接触过什么，只不过听说过angular.js、backbone.js之类的。其余的都没太听说过。。。汗</p>
+<p>不过我有表示我以后会努力学习，迎头赶上！</p>
+<hr>
+<p>最后问道面试官对我的印象：1、经验不足，2、新技术接触的太少。</p>
+<p>因为我目前时间有限，只有每天晚上整理面试题，所以这短短的几个题整理了接近一个星期，很多问题也期待大神们的补充。。。目前也算是找到了工作，今后会继续努力，让我的羽翼丰满起来！</p>
+
+        
+      </div>
+      <footer>
+        
+          
+          
+  
+  <div class="tags">
+    <a href="/tags/前端面试/">前端面试</a>
+  </div>
+
+          <div class="share">
+  
+
+    
+
+    
+      <div class="g-plusone"></div>
+
+      <script type="text/javascript">
+        window.___gcfg = {lang: 'en-GB'};
+
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/platform.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+    
+
+    
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="halfer53">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+  
+</div>
+          
+<nav class="article-nav clearfix">
+ 
+ <div class="article-prev" >
+ <a href="/2015/12/06/pushState/" title="【经验总结】pushState＋ajax应用">
+  <i class="fa fa-long-arrow-left"></i>
+  <span>
+  【经验总结】pushState＋ajax应用</span>
+</a>
+</div>
+
+
+<div class="article-next">
+<a href="/2015/09/02/first-interview/"  title="【面试初体验】今日头条面试">
+ <span>【面试初体验】今日头条面试
+</span>
+<i class="fa fa-long-arrow-right"></i>
+</a>
+</div>
+
+</nav>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    </div>
+</article>
+
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright"><div class="padding">
+	
+	  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:myj.name">
+  </form>
+</div>
+	
+	  
+<div class="widget recent-post">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/05/12/todolist-react/">【练手】Webpack+React开发Todolist项目</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/06/pushState/">【经验总结】pushState＋ajax应用</a>
+      </li>
+    
+      <li>
+        <a href="/2015/09/05/second-interview/">【面试次体验】堆糖前端面试</a>
+      </li>
+    
+      <li>
+        <a href="/2015/09/02/first-interview/">【面试初体验】今日头条面试</a>
+      </li>
+    
+  </ul>
+</div>
+
+	
+	  
+	
+	  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  
+    <a href="/tags/React/">React<small>1</small></a>
+  
+    <a href="/tags/Webpack/">Webpack<small>1</small></a>
+  
+    <a href="/tags/html5/">html5<small>1</small></a>
+  
+    <a href="/tags/javascript/">javascript<small>1</small></a>
+  
+    <a href="/tags/pjax/">pjax<small>1</small></a>
+  
+    <a href="/tags/前端面试/">前端面试<small>2</small></a>
+  
+</div>
+
+	
+</div></aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="padding">
+	<div class="alignleft">
+	  
+	  &copy; 2016 Kathy Miao
+	  
+	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
+	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>
+	</div>
+
+	<div class="alignright">
+		
+		
+		
+		
+		
+		
+		
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+<div class="scroll-top"><i class="fa fa-arrow-circle-up"></i></div></footer>
+  
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+<script type="text/javascript">
+$(window).scroll(function() {
+
+    if($(this).scrollTop() > 400) {
+        $('.scroll-top').fadeIn(200);
+    } else {
+        $('.scroll-top').fadeOut(200);
+    }
+});
+
+$('.scroll-top').bind('click', function(e) {
+    e.preventDefault();
+    $('body,html').animate({scrollTop:0},200);
+});
+</script>
+
+
+</body>
+</html>
