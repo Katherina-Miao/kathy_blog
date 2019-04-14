@@ -2,7 +2,7 @@
 
 <html lang="en">
   
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>【面试次体验】堆糖前端面试 | Kathy&#39;s Tech Blog</title>
@@ -13,15 +13,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="【面试次体验】堆糖前端面试"/>
-  <meta property="og:site_name" content="Kathy&#39;s Tech Blog"/>
+  <meta property="og:title" content="【面试次体验】堆糖前端面试">
+  <meta property="og:site_name" content="Kathy&#39;s Tech Blog">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
-    <meta http-equiv="Content-Language" content="en"/>
+    <meta http-equiv="Content-Language" content="en">
   
 
   <link href="/img/favicon.png" rel="icon">
@@ -63,7 +63,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
   
     
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball" rel="stylesheet" type="text/css">
     
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
@@ -73,7 +73,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 </head>
-
+</html>
 
 <body>
   <header id="header"><div class="padding inner">
@@ -81,7 +81,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 	  <h1><a href="/">Kathy&#39;s Tech Blog</a></h1>
 	</div>
 	<nav id="main-nav" class="alignright">
-		<input type="checkbox" id="toggle" />
+		<input type="checkbox" id="toggle">
 		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
 	  <ul class="menu">
 	    
@@ -135,12 +135,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
         
           <p>在上一次失败的经历之后，本菜鸟非常努力的梳理羽毛（整理知识点），在两天后参加了堆糖的视频面试。这次面试经历总体来说比较好，可能是查漏补缺起到了效果，大部分的题目都能大体回答出来，加上面试官很nice~~~<br>Anyway，还是把面试过程整理出来。</p>
 <hr>
-<p>首先还是从CSS开始，有遇到与上次面试类似题目的请参考<a href="http://segmentfault.com/a/1190000003508121" target="_blank" rel="external">今日头条前端实习生面试</a></p>
+<p>首先还是从CSS开始，有遇到与上次面试类似题目的请参考<a href="http://segmentfault.com/a/1190000003508121" target="_blank" rel="noopener">今日头条前端实习生面试</a></p>
 <h2 id="CSS题目"><a href="#CSS题目" class="headerlink" title="CSS题目"></a>CSS题目</h2><p>1.如何实现一个三栏布局</p>
 <p>三栏布局，问到的时候我以为是左右固定，中间自适应，后来发现他就是想考我float。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right,.middle&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	border: solid 1px #777;</span><br><span class="line">	width: 30%;</span><br><span class="line">	margin:1.55%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后面试官问我，这三个元素float了之后，对下面的元素有影响要怎么处理。</p>
-<p>清除浮动问题我发现是前端面试CSS方面经常问的一个问题，详细可参考文章：<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动</a>。</p>
+<p>清除浮动问题我发现是前端面试CSS方面经常问的一个问题，详细可参考文章：<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="noopener">那些年我们一起清除过的浮动</a>。</p>
 <p>主要的方法有添加多余标签，然后clear: both一下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;middle&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>然后CSS改一下</p>
@@ -168,10 +168,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <p>所以说还是基础硬伤，因为自己做的时候没注意过相对于谁，而且大多是外框，所以就说相对于窗口。面试官一笑，窗口？我说好吧，我再查查。。。顺便查了一下盒模型设置的各个百分比都是相对于谁的。</p>
 <p>CSS中：width、margin和padding百分比是相对于包含块的！<br>一般情况下包含块是父元素，当position: fixed的时候，包含块为视口；当position: absolute的时候，包含块为最近的position不是static的祖先。</p>
 <p>除此之外，响应式布局的方法还有：<br>CSS3 Media Query</p>
-<p>通过在<head>里面插入这段内容，使分辨率在小于1024分辨率的情况下和大于1024分辨率的情况下能响应不同的css文件。</head></p>
+<p>通过在<head><meta name="generator" content="Hexo 3.8.0">里面插入这段内容，使分辨率在小于1024分辨率的情况下和大于1024分辨率的情况下能响应不同的css文件。</head></p>
 <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width; initial-scale=1.0&quot;&gt;
 </code></pre><p>设置原始缩放比例和视窗的大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;common.css&quot; media=&quot;all&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;normalScreen.css&quot; media=&quot;screen and (max-width: 1024px)&quot; /&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;widthScreen.css&quot; media=&quot;screen and (min-width: 1024px)&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
-<p>同样，可以在样式表中镶嵌@media，文章推荐参考<a href="http://www.jiawin.com/response-type-layout-design" target="_blank" rel="external">响应式布局这件小事</a></p>
+<p>同样，可以在样式表中镶嵌@media，文章推荐参考<a href="http://www.jiawin.com/response-type-layout-design" target="_blank" rel="noopener">响应式布局这件小事</a></p>
 <hr>
 <h2 id="Javascript题目"><a href="#Javascript题目" class="headerlink" title="Javascript题目"></a>Javascript题目</h2><p>1.Jquery中$(‘’).click()和$(‘’).on(‘click’)的分别</p>
 <p>我为了学基础，学原生的Javascript，已经很久没碰Jquery了。问到这个问题的时候，我只能很诚实的说我没有考虑过这个问题，如果让我说的话，可能是原生的JS中onclick事件与addEventListener(“click”)的区别。</p>
@@ -183,7 +183,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#myDiv&quot;).off(&quot;click&quot;);//解除点击事件绑定</span><br></pre></td></tr></table></figure>
 <hr>
 <p>2.JS实现一个类</p>
-<p>我发现，这个问题也是面试常会问到的，而且我觉得这也是我在学习JS的时候遇到的一个难点。<br>说起类，就要提起原型链的问题，这里直接上例子。对于原型，可以直接参考我大神男友的博文<a href="http://t.zjy.name/archives/javascript-object-oriented-1.html" target="_blank" rel="external">Javascript 面向对象特性(1)——抛弃类</a>、<a href="http://t.zjy.name/archives/javascript-object-oriented-2.html" target="_blank" rel="external">Javascript 面向对象特性(2)——找回类</a>。</p>
+<p>我发现，这个问题也是面试常会问到的，而且我觉得这也是我在学习JS的时候遇到的一个难点。<br>说起类，就要提起原型链的问题，这里直接上例子。对于原型，可以直接参考我大神男友的博文<a href="http://t.zjy.name/archives/javascript-object-oriented-1.html" target="_blank" rel="noopener">Javascript 面向对象特性(1)——抛弃类</a>、<a href="http://t.zjy.name/archives/javascript-object-oriented-2.html" target="_blank" rel="noopener">Javascript 面向对象特性(2)——找回类</a>。</p>
 <p>《Javascript高级程序设计》中讲到继承的时候提到了六种方式：原型链、借用构造函数、组合继承、原型式继承、寄生式继承、寄生组合式集成。</p>
 <p>原型链方式的具体用法是创建一个构造函数，然后创建继承这个构造函数的引用类型，将这个引用的原型指向构造函数。在原型链的问题是，Student的原型为Person的实例，那么所有Student的实例会共享它引用类型的属性，所以实例在修改这个属性的时候会导致其他实例的实例都被修改。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Person(name,age)&#123;</span><br><span class="line">	this.name=name;</span><br><span class="line">	this.age=age;</span><br><span class="line">    this.sayName=function()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function Student(school)&#123;</span><br><span class="line">	this.school=school;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype= new Person();</span><br></pre></td></tr></table></figure>
@@ -256,7 +256,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
+ <div class="article-prev">
  <a href="/2015/12/06/pushState/" title="【经验总结】pushState＋ajax应用">
   <i class="fa fa-long-arrow-left"></i>
   <span>
@@ -266,7 +266,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 <div class="article-next">
-<a href="/2015/09/02/first-interview/"  title="【面试初体验】今日头条面试">
+<a href="/2015/09/02/first-interview/" title="【面试初体验】今日头条面试">
  <span>【面试初体验】今日头条面试
 </span>
 <i class="fa fa-long-arrow-right"></i>
@@ -304,6 +304,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2017/09/05/commonjsEsm/">Node.js, TC-39, and Modules</a>
+      </li>
+    
+      <li>
         <a href="/2016/05/12/todolist-react/">【练手】Webpack+React开发Todolist项目</a>
       </li>
     
@@ -333,9 +337,15 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/Webpack/">Webpack<small>1</small></a>
   
+    <a href="/tags/commonjs/">commonjs<small>1</small></a>
+  
     <a href="/tags/html5/">html5<small>1</small></a>
   
     <a href="/tags/javascript/">javascript<small>1</small></a>
+  
+    <a href="/tags/modules/">modules<small>1</small></a>
+  
+    <a href="/tags/nodejs/">nodejs<small>1</small></a>
   
     <a href="/tags/pjax/">pjax<small>1</small></a>
   
@@ -350,7 +360,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <footer id="footer" class="inner"><div class="padding">
 	<div class="alignleft">
 	  
-	  &copy; 2016 Kathy Miao
+	  &copy; 2019 Kathy Miao
 	  
 	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
 	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>

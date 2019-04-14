@@ -2,7 +2,7 @@
 
 <html lang="en">
   
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>【练手】Webpack+React开发Todolist项目 | Kathy&#39;s Tech Blog</title>
@@ -13,15 +13,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="【练手】Webpack+React开发Todolist项目"/>
-  <meta property="og:site_name" content="Kathy&#39;s Tech Blog"/>
+  <meta property="og:title" content="【练手】Webpack+React开发Todolist项目">
+  <meta property="og:site_name" content="Kathy&#39;s Tech Blog">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
-    <meta http-equiv="Content-Language" content="en"/>
+    <meta http-equiv="Content-Language" content="en">
   
 
   <link href="/img/favicon.png" rel="icon">
@@ -63,7 +63,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
   
     
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball" rel="stylesheet" type="text/css">
     
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
@@ -73,7 +73,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 </head>
-
+</html>
 
 <body>
   <header id="header"><div class="padding inner">
@@ -81,7 +81,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 	  <h1><a href="/">Kathy&#39;s Tech Blog</a></h1>
 	</div>
 	<nav id="main-nav" class="alignright">
-		<input type="checkbox" id="toggle" />
+		<input type="checkbox" id="toggle">
 		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
 	  <ul class="menu">
 	    
@@ -136,20 +136,20 @@ body{ -webkit-animation: bugfix infinite 1s; }
           <p>主流框架在不停的更新换代。在使用了gulp＋Jquery半年以上的时候，为了跟上步伐，决定尝试用webpack＋react做一个简单的app来熟悉下。</p>
 <p><em>Todo List</em> 就决定是你了！</p>
 <h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><p>第一次接触webpack的时候觉得这个想法惊为天人！通过各种loader将所有的资源打包，然后插入到html里面：所有非js的资源，都需要通过相对应的loader。而且webpack内还整合很多功能，模块加载啊，ES6支持啊。。。</p>
-<p><img src="../../../../img/todolist-react1.png" alt="clipboard.png"><a href="https://webpack.github.io/docs/what-is-webpack.html" target="_blank" rel="external">What is webpack?</a></p>
+<p><img src="../../../../img/todolist-react1.png" alt="clipboard.png"><a href="https://webpack.github.io/docs/what-is-webpack.html" target="_blank" rel="noopener">What is webpack?</a></p>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装过程不做赘述，webpack官网有更详细的描述，通过npm安装：<code>$ npm install webpack --save-dev</code></p>
-<h3 id="Loader-amp-Plugins"><a href="#Loader-amp-Plugins" class="headerlink" title="Loader&amp;Plugins"></a>Loader&amp;Plugins</h3><p>之前说webpack是把非js资源转换成js，那么就有各式各样的loader，在<a href="https://webpack.github.io/docs/list-of-loaders.html" target="_blank" rel="external">List of Loaders</a>可以查看列表，但一般来说，会用到如下几种：</p>
+<h3 id="Loader-amp-Plugins"><a href="#Loader-amp-Plugins" class="headerlink" title="Loader&amp;Plugins"></a>Loader&amp;Plugins</h3><p>之前说webpack是把非js资源转换成js，那么就有各式各样的loader，在<a href="https://webpack.github.io/docs/list-of-loaders.html" target="_blank" rel="noopener">List of Loaders</a>可以查看列表，但一般来说，会用到如下几种：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">css-loader //将css打包</span><br><span class="line">style-loader //将样式输出</span><br><span class="line">url-loader //解析url，小图片会被解析为data-url</span><br></pre></td></tr></table></figure>
 <p>除此之外，还有file、json、sass等loader。这里因为使用了React，所以除了这些，还安装了babel-loader。<br>通过babel，可以将jsx转换成js，也可以使用es6语法。</p>
 <p>安装：<code>$ npm install style-loader css-loader url-loader babel-loader sass-loader --save-dev</code></p>
 <p>插件可以提供打包相关的功能：比如将指定打包的<code>CommonsChunkPlugin</code>；压缩js代码的<code>UglifyJsPlugin</code>；限制合并的<code>LimitChunkCountPlugin</code>。</p>
-<p>具体的插件说明可以在<a href="https://webpack.github.io/docs/list-of-plugins.html" target="_blank" rel="external">List of Plugins</a>中查看。</p>
+<p>具体的插件说明可以在<a href="https://webpack.github.io/docs/list-of-plugins.html" target="_blank" rel="noopener">List of Plugins</a>中查看。</p>
 <h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><p>要用webpack，需要配置webpack.config.js。在这个配置里面，entry就是这个app的入口在src文件夹，output是编译之后的脚本在dist文件夹。因为这里用了CommonsChunkPlugin，将引用的库单独导出，所以在entry里配置了vendor，编译过之后会生成vendor.js。在module里面可以配置loader，jsx用到babel的es2015和react，scss用到了style、css和sass。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var webpack = require(&apos;webpack&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &apos;./dist/[name].js&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    entry: &#123;</span><br><span class="line">        vendor: [</span><br><span class="line">            &apos;react&apos;,</span><br><span class="line">            &apos;react-dom&apos;</span><br><span class="line">        ],</span><br><span class="line">        app: &apos;./src/index.jsx&apos;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    module: &#123;</span><br><span class="line">        loaders: [</span><br><span class="line">            &#123;test: /\.jsx$/, exclude: /node_modules/, loader: &apos;babel&apos;, query: &#123;presets: [&apos;es2015&apos;, &apos;react&apos;]&#125;&#125;,</span><br><span class="line">            &#123;test: /\.scss$/, exclude: /node_modules/, loaders: [&quot;style&quot;, &quot;css&quot;, &quot;sass&quot;]&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    plugins: [</span><br><span class="line">        new webpack.optimize.CommonsChunkPlugin(&apos;vendor&apos;, &apos;./dist/vendor.js&apos;),</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>需要建立一个html文件，将编译过的脚本引入，如果使用脚本分块的话，一定要注意先后依赖：比如vendor.js要在app.js之前。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./dist/vendor.js&quot;type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;./dist/app.js&quot;type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>第一次接触React，我是懵逼的。</p>
 <p>长时间函数式、关注分离，第一次接触MVVM，表示很纠结、也很方便。纠结的是事件绑定与组建通信的方式；方便的是不用在意界面的修改，而专注于业务。</p>
-<p>推荐入门阅读我大神男友的博文：<a href="http://zjy.name/archives/first-met-React.html" target="_blank" rel="external">初识 React</a></p>
+<p>推荐入门阅读我大神男友的博文：<a href="http://zjy.name/archives/first-met-React.html" target="_blank" rel="noopener">初识 React</a></p>
 <h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>在.jsx文件中，可以直接返回一个元素：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* 这里的className，是样式class。*/</span><br><span class="line">return (</span><br><span class="line">  &lt;div className=&quot;content&quot;&gt;</span><br><span class="line">    Hello, world!</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>直接写标签，简单易读～！<br>如果要建组件，要用到<code>React.createClass</code>，注意的一点是组件名一定要首字母大写。<br>React会建立虚拟DOM树，再之后的更改中会建立另一个DOM树，然后通过有效的比对，在界面上做出相应的更改。</p>
@@ -161,7 +161,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <p>比起手动维护交互时界面的变化，用<code>state</code>就方便多了，然而子组件若是想要改变父组件的<code>state</code>，只能通过事件向父组件传递。</p>
 <p>这里就先不举例啦，到<em>Todo List</em>的时候仔细说说。</p>
 <p>####生命周期方法####</p>
-<p>这次生命周期方法只用到了<code>getInitialState</code>，对于各个方法使用心得和避坑还是参考<a href="http://zjy.name/archives/first-met-React.html" target="_blank" rel="external">初识 React</a>。</p>
+<p>这次生命周期方法只用到了<code>getInitialState</code>，对于各个方法使用心得和避坑还是参考<a href="http://zjy.name/archives/first-met-React.html" target="_blank" rel="noopener">初识 React</a>。</p>
 <p>React组件是一个从加载－》更新－》卸载的过程，一共提供10个生命周期方法：</p>
 <ul>
 <li><code>getDefaultProps</code>：第一次实例化调用，给组件提供props</li>
@@ -181,7 +181,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <h2 id="TODOS"><a href="#TODOS" class="headerlink" title="TODOS"></a>TODOS</h2><p>Todo List是一个经典入门练习。<br>第一次做webpack＋react，因为这两个对我来说都是新东西，所以一开始有点困难。遇到问题也找不到是webpack配置问题，还是react语法问题（对不起，我真的很笨。。。</p>
 <p>Anyway，这个入门是在react官网上demo的基础上延伸的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">var TodoList = React.createClass(&#123;</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    var createItem = function(itemText) &#123;</span><br><span class="line">      return &lt;li&gt;&#123;itemText&#125;&lt;/li&gt;;</span><br><span class="line">    &#125;;</span><br><span class="line">    return &lt;ul&gt;&#123;this.props.items.map(createItem)&#125;&lt;/ul&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">var TodoApp = React.createClass(&#123;</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return &#123;items: [], text: &apos;&apos;&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  onChange: function(e) &#123;</span><br><span class="line">    this.setState(&#123;text: e.target.value&#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  handleSubmit: function(e) &#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    var nextItems = this.state.items.concat([this.state.text]);</span><br><span class="line">    var nextText = &apos;&apos;;</span><br><span class="line">    this.setState(&#123;items: nextItems, text: nextText&#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h3&gt;TODO&lt;/h3&gt;</span><br><span class="line">        &lt;TodoList items=&#123;this.state.items&#125; /&gt;</span><br><span class="line">        &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">          &lt;input onChange=&#123;this.onChange&#125; value=&#123;this.state.text&#125; /&gt;</span><br><span class="line">          &lt;button&gt;&#123;&apos;Add #&apos; + (this.state.items.length + 1)&#125;&lt;/button&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">React.render(&lt;TodoApp /&gt;, mountNode);</span><br></pre></td></tr></table></figure>
-<p><a href="https://facebook.github.io/react/" target="_blank" rel="external">A JavaScript library for building user interfaces | React</a></p>
+<p><a href="https://facebook.github.io/react/" target="_blank" rel="noopener">A JavaScript library for building user interfaces | React</a></p>
 <p>这个demo把一个Todo List的基础功能实现了：可以将新任务添加到任务列表中。</p>
 <p>TodoApp是父组件，它用了生命周期方法<code>getInitialState</code>来设置文本框的状态<code>text</code>，列表内的项目<code>items</code>。<br>每次改变文本框内容，<code>setState</code>会改变<code>text</code>的值。在提交的时候，会给<code>items</code>数组多添加一项，同时置空<code>text</code>和文本框。<br>按钮上面的数字是目前任务条目的个数，当<code>items</code>数组多添加一项的时候，按钮也会随之加1。<br>TodoApp是父组件中引入了TodoList子组件，并传递了<code>items</code>。在TodoList组建中，对<code>props.items</code>用<code>map</code>方法添加了条目。</p>
 <p>在此基础上，我除了把界面做漂亮之外（对不起，视觉系的人不能对着毫无样式的页面做功能。。）还增加了勾选完成和删除任务功能。</p>
@@ -201,7 +201,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <p>而子组件向父组件传递，通过事件。事件定义在父组件，通过<code>props</code>传递到子组件，绑定触发时可以改变父组件的<code>state</code>。</p>
 <p>下面就是index.jsx的代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">var TodoList = React.createClass(&#123;</span><br><span class="line">    changeTab : function(e)&#123;</span><br><span class="line">        var type = e.target.getAttribute(&apos;type&apos;);</span><br><span class="line">        this.setState(&#123;type:type&#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    getInitialState: function() &#123;</span><br><span class="line">        return &#123;type:&apos;all&apos;&#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    render: function() &#123;</span><br><span class="line">        var style = &#123;&#125;;</span><br><span class="line">        if(this.props.items.length === 0)&#123;</span><br><span class="line">            style = &#123;display:&apos;none&apos;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return &lt;div className=&quot;itemList&quot;&gt;</span><br><span class="line">            &lt;div className=&quot;clearfix&quot;&gt;</span><br><span class="line">                &#123;this.props.items.length&#125; items</span><br><span class="line">                &lt;nav style=&#123;style&#125;&gt;</span><br><span class="line">                    &lt;a className=&#123;this.state.type === &apos;all&apos;?&apos;navTab active&apos;:&apos;navTab&apos;&#125; type=&apos;all&apos; onClick=&#123;this.changeTab&#125;&gt;ALL&lt;/a&gt;</span><br><span class="line">                    &lt;a className=&#123;this.state.type === &apos;active&apos;?&apos;navTab active&apos;:&apos;navTab&apos;&#125; type=&apos;active&apos; onClick=&#123;this.changeTab&#125;&gt;ACTIVE&lt;/a&gt;</span><br><span class="line">                    &lt;a className=&#123;this.state.type === &apos;done&apos;?&apos;navTab active&apos;:&apos;navTab&apos;&#125; type=&apos;done&apos; onClick=&#123;this.changeTab&#125;&gt;COMPLETE&lt;/a&gt;</span><br><span class="line">                &lt;/nav&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &#123;this.props.items.map((item, index)=&gt;&#123;</span><br><span class="line">                        if(this.state.type === &apos;all&apos;||this.state.type === item.status)&#123;</span><br><span class="line">                            return &lt;li key=&#123;index&#125; id=&#123;index&#125; className=&#123;item.status&#125;&gt;</span><br><span class="line">                            &lt;input type=&quot;checkbox&quot; className=&quot;toggle&quot; onChange=&#123;this.props.changeStatus&#125; checked=&#123;item.status === &apos;done&apos;&#125;/&gt;</span><br><span class="line">                            &lt;lable&gt;&#123;item.text&#125;&lt;/lable&gt;</span><br><span class="line">                            &lt;button className=&quot;remove&quot; onClick=&#123;this.props.removeItem&#125;&gt;&lt;/button&gt;</span><br><span class="line">                        &lt;/li&gt;;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">var TodoApp = React.createClass(&#123;</span><br><span class="line">    getInitialState: function() &#123;</span><br><span class="line">        var itemsFromStorage = localStorage.getItem(&apos;TODOs&apos;)?window.JSON.parse(localStorage.getItem(&apos;TODOs&apos;)):[];</span><br><span class="line">        return &#123;items: itemsFromStorage, text: &apos;&apos;&#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    onChange: function(e) &#123;</span><br><span class="line">        this.setState(&#123;text: e.target.value&#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    handleSubmit: function(e) &#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        var nextItems = this.state.items.concat([&#123;text: this.state.text, status:&apos;active&apos;&#125;]);</span><br><span class="line">        var nextText = &apos;&apos;;</span><br><span class="line">        var itemJson = JSON.stringify(nextItems);</span><br><span class="line">        localStorage.setItem(&apos;TODOs&apos;,itemJson);</span><br><span class="line">        this.setState(&#123;items: nextItems, text: nextText&#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    changeStatus: function(e) &#123;</span><br><span class="line">        var key = e.target.parentNode.getAttribute(&apos;id&apos;);</span><br><span class="line">        var items = this.state.items;</span><br><span class="line">        var status = this.state.items[key][&apos;status&apos;];</span><br><span class="line">        if (status === &apos;done&apos;)&#123;</span><br><span class="line">            items[key][&apos;status&apos;] = &apos;active&apos;;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            items[key][&apos;status&apos;] = &apos;done&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        this.changeStates(items);</span><br><span class="line">    &#125;,</span><br><span class="line">    changeStates: function(items) &#123;</span><br><span class="line">        this.setState(&#123;items: items&#125;);</span><br><span class="line">        localStorage.setItem(&apos;TODOs&apos;,JSON.stringify(items));</span><br><span class="line">    &#125;,</span><br><span class="line">    removeItem: function(e) &#123;</span><br><span class="line">        var key = e.target.parentNode.getAttribute(&apos;id&apos;);</span><br><span class="line">        var items = this.state.items;</span><br><span class="line">        items.splice(key, 1);</span><br><span class="line">        this.changeStates(items);</span><br><span class="line">    &#125;,</span><br><span class="line">    render: function() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;pure-u-11-12&quot;&gt;</span><br><span class="line">                &lt;header&gt;</span><br><span class="line">                    &lt;h3&gt;TODOs&lt;/h3&gt;</span><br><span class="line">                &lt;/header&gt;</span><br><span class="line">                &lt;form onSubmit=&#123;this.handleSubmit&#125; className=&apos;submitForm&apos;&gt;</span><br><span class="line">                    &lt;input type=&apos;text&apos; className=&apos;submitInput pure-u-3-4 pure-u-md-5-6 pure-u-lg-7-8&apos; onChange=&#123;this.onChange&#125; value=&#123;this.state.text&#125; placeholder=&quot;What needs to be done?&quot;/&gt;</span><br><span class="line">                    &lt;button className=&apos;submitBtn pure-u-1-4 pure-u-md-1-6 pure-u-lg-1-8&apos; disabled=&#123;this.state.text===&apos;&apos;&#125;&gt;&#123;&apos;Add&apos;&#125;&lt;/button&gt;</span><br><span class="line">                &lt;/form&gt;</span><br><span class="line">                &lt;TodoList items=&#123;this.state.items&#125; changeStatus=&#123;this.changeStatus&#125; removeItem=&#123;this.removeItem&#125;/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>完整代码请戳&gt;&gt;<a href="https://github.com/Katherina-Miao/todolist-react" target="_blank" rel="external">github: todolist-react</a></p>
+<p>完整代码请戳&gt;&gt;<a href="https://github.com/Katherina-Miao/todolist-react" target="_blank" rel="noopener">github: todolist-react</a></p>
 
         
       </div>
@@ -242,9 +242,17 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
+ <div class="article-prev">
+ <a href="/2017/09/05/commonjsEsm/" title="Node.js, TC-39, and Modules">
+  <i class="fa fa-long-arrow-left"></i>
+  <span>
+  Node.js, TC-39, and Modules</span>
+</a>
+</div>
+
 
 <div class="article-next">
-<a href="/2015/12/06/pushState/"  title="【经验总结】pushState＋ajax应用">
+<a href="/2015/12/06/pushState/" title="【经验总结】pushState＋ajax应用">
  <span>【经验总结】pushState＋ajax应用
 </span>
 <i class="fa fa-long-arrow-right"></i>
@@ -282,6 +290,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2017/09/05/commonjsEsm/">Node.js, TC-39, and Modules</a>
+      </li>
+    
+      <li>
         <a href="/2016/05/12/todolist-react/">【练手】Webpack+React开发Todolist项目</a>
       </li>
     
@@ -311,9 +323,15 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/Webpack/">Webpack<small>1</small></a>
   
+    <a href="/tags/commonjs/">commonjs<small>1</small></a>
+  
     <a href="/tags/html5/">html5<small>1</small></a>
   
     <a href="/tags/javascript/">javascript<small>1</small></a>
+  
+    <a href="/tags/modules/">modules<small>1</small></a>
+  
+    <a href="/tags/nodejs/">nodejs<small>1</small></a>
   
     <a href="/tags/pjax/">pjax<small>1</small></a>
   
@@ -328,7 +346,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <footer id="footer" class="inner"><div class="padding">
 	<div class="alignleft">
 	  
-	  &copy; 2016 Kathy Miao
+	  &copy; 2019 Kathy Miao
 	  
 	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
 	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>

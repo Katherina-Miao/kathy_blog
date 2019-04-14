@@ -2,7 +2,7 @@
 
 <html lang="en">
   
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>【面试初体验】今日头条面试 | Kathy&#39;s Tech Blog</title>
@@ -13,15 +13,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="【面试初体验】今日头条面试"/>
-  <meta property="og:site_name" content="Kathy&#39;s Tech Blog"/>
+  <meta property="og:title" content="【面试初体验】今日头条面试">
+  <meta property="og:site_name" content="Kathy&#39;s Tech Blog">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
-    <meta http-equiv="Content-Language" content="en"/>
+    <meta http-equiv="Content-Language" content="en">
   
 
   <link href="/img/favicon.png" rel="icon">
@@ -63,7 +63,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
   
     
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball" rel="stylesheet" type="text/css">
     
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
@@ -73,7 +73,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 </head>
-
+</html>
 
 <body>
   <header id="header"><div class="padding inner">
@@ -81,7 +81,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 	  <h1><a href="/">Kathy&#39;s Tech Blog</a></h1>
 	</div>
 	<nav id="main-nav" class="alignright">
-		<input type="checkbox" id="toggle" />
+		<input type="checkbox" id="toggle">
 		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
 	  <ul class="menu">
 	    
@@ -157,7 +157,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,.right,.middle&#123;</span><br><span class="line">	float:left;</span><br><span class="line">	width:33.3%</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其实还有可以用display:inline-block。回家以后尝试了一下，发现问题是如果这几个元素没有在代码里写在一行，那么最后展现出来的是最后一个元素会被挤到下面一行。<br>大神男友告诉我hack方法为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">margin-right: -4px//可以按照实际调整。</span><br></pre></td></tr></table></figure>
-<p>关于inline-block缝隙，推荐一篇文章：<a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">去除间距</a></p>
+<p>关于inline-block缝隙，推荐一篇文章：<a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="noopener">去除间距</a></p>
 <p>还有一个方法为tabel-cell，这种方法就是将每一个元素设置的尽可能的大，但由于自适应的特性，这三个元素还是会乖乖地等分的排在一行里。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.left,.middle, .right&#123;</span><br><span class="line">    display:table-cell;</span><br><span class="line">	width:3000px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -170,7 +170,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <pre><code>box-shadow: 2px 2px 3px #777;
 </code></pre><p>然后我也提了一下border-image这个好用又漂亮的属性。通过设置图片路径，图片的切割方式、还有边框的宽度、溢出，以及平铺或拉伸等呈现方式，可以做出一个漂亮精致的边框。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border-image: url(border-image.png) 30/10px/10px round;</span><br></pre></td></tr></table></figure>
-<p>关于border-image的每一项属性的用法和限制，可以参考我大神男友的文章<a href="http://t.zjy.name/archives/css3-border-image.html" target="_blank" rel="external">CSS 3 border-image 属性详解</a></p>
+<p>关于border-image的每一项属性的用法和限制，可以参考我大神男友的文章<a href="http://t.zjy.name/archives/css3-border-image.html" target="_blank" rel="noopener">CSS 3 border-image 属性详解</a></p>
 <p>面试官还问到了<strong>动画</strong>：transition、transform和animation的区别？<br>可惜我目前并没有用CSS做过动画【摊手。。<br>他专门问到了这个问题，说明CSS3的动画是应用较多的，回来立刻学习。</p>
 <p>transform是指转换，可以将元素移动、旋转、倾斜、拉伸。</p>
 <p>translate()，从当前位置移动到由给定left和top值的位置。这个例子中，div向右下移动，如果想要往左上移动，则要设置为负值。</p>
@@ -304,7 +304,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
+ <div class="article-prev">
  <a href="/2015/09/05/second-interview/" title="【面试次体验】堆糖前端面试">
   <i class="fa fa-long-arrow-left"></i>
   <span>
@@ -344,6 +344,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2017/09/05/commonjsEsm/">Node.js, TC-39, and Modules</a>
+      </li>
+    
+      <li>
         <a href="/2016/05/12/todolist-react/">【练手】Webpack+React开发Todolist项目</a>
       </li>
     
@@ -373,9 +377,15 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/Webpack/">Webpack<small>1</small></a>
   
+    <a href="/tags/commonjs/">commonjs<small>1</small></a>
+  
     <a href="/tags/html5/">html5<small>1</small></a>
   
     <a href="/tags/javascript/">javascript<small>1</small></a>
+  
+    <a href="/tags/modules/">modules<small>1</small></a>
+  
+    <a href="/tags/nodejs/">nodejs<small>1</small></a>
   
     <a href="/tags/pjax/">pjax<small>1</small></a>
   
@@ -390,7 +400,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <footer id="footer" class="inner"><div class="padding">
 	<div class="alignleft">
 	  
-	  &copy; 2016 Kathy Miao
+	  &copy; 2019 Kathy Miao
 	  
 	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
 	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>

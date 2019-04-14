@@ -2,7 +2,7 @@
 
 <html lang="en">
   
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <title>【经验总结】pushState＋ajax应用 | Kathy&#39;s Tech Blog</title>
@@ -13,15 +13,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="【经验总结】pushState＋ajax应用"/>
-  <meta property="og:site_name" content="Kathy&#39;s Tech Blog"/>
+  <meta property="og:title" content="【经验总结】pushState＋ajax应用">
+  <meta property="og:site_name" content="Kathy&#39;s Tech Blog">
 
   
-    <meta property="og:image" content="undefined"/>
+    <meta property="og:image" content="undefined">
   
 
   
-    <meta http-equiv="Content-Language" content="en"/>
+    <meta http-equiv="Content-Language" content="en">
   
 
   <link href="/img/favicon.png" rel="icon">
@@ -63,7 +63,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
   
     
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball' rel='stylesheet' type='text/css'>
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400|Playball" rel="stylesheet" type="text/css">
     
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
@@ -73,7 +73,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 </head>
-
+</html>
 
 <body>
   <header id="header"><div class="padding inner">
@@ -81,7 +81,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 	  <h1><a href="/">Kathy&#39;s Tech Blog</a></h1>
 	</div>
 	<nav id="main-nav" class="alignright">
-		<input type="checkbox" id="toggle" />
+		<input type="checkbox" id="toggle">
 		<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick><i class="fa fa-bars"></i></label>
 	  <ul class="menu">
 	    
@@ -147,7 +147,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var changeState = function changeState(href) &#123;</span><br><span class="line">    var parmas;</span><br><span class="line">    var href = href;</span><br><span class="line">    //取出参数（使用插件）</span><br><span class="line">	href = href.substring(href.indexOf(&apos;?&apos;));</span><br><span class="line">	parmas = $.query.parseNew(href).get();</span><br><span class="line">    var subParmas = &#123;</span><br><span class="line">	   /* state对象 */</span><br><span class="line">	&#125;;</span><br><span class="line">	var subHref;       </span><br><span class="line">	/* </span><br><span class="line">    各种判断处理</span><br><span class="line">    subHref为url要与后台约定</span><br><span class="line">    */</span><br><span class="line">    History.pushState(subParmas, $(&apos;title&apos;).text(), subHref);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>然后等到pushState的时候会触发’statechange’，我们再根据参数ajax取数据，最后呈现出来：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//当页面url更新时更新数据</span><br><span class="line">History.Adapter ? History.Adapter.bind(window,&apos;statechange&apos;,function()&#123;</span><br><span class="line">	var parmas = History.getState().data,</span><br><span class="line">    $.when($.get(ajaxlink, parmas)).done(function(result) &#123;</span><br><span class="line">	    /* </span><br><span class="line">        各种呈现处理 </span><br><span class="line">        */         </span><br><span class="line">	&#125;);</span><br><span class="line">&#125;) : &apos;&apos;;</span><br></pre></td></tr></table></figure>
-<p>得益于pushState和replaceState的出现，以及jquery.history插件，这几行代码就可以有pjax效果。<br>嘛～～更多有关于pjax的应用，可以阅读学习<a href="http://tonylee.pw/2015/03/%E6%B5%85%E6%9E%90web%E5%BC%80%E5%8F%91%E4%B8%AD%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F-2/img" target="_blank" rel="external">浅析Web开发中前端路由实现的几种方式</a></p>
+<p>得益于pushState和replaceState的出现，以及jquery.history插件，这几行代码就可以有pjax效果。<br>嘛～～更多有关于pjax的应用，可以阅读学习<a href="http://tonylee.pw/2015/03/%E6%B5%85%E6%9E%90web%E5%BC%80%E5%8F%91%E4%B8%AD%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F-2/img" target="_blank" rel="noopener">浅析Web开发中前端路由实现的几种方式</a></p>
 
         
       </div>
@@ -188,7 +188,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
- <div class="article-prev" >
+ <div class="article-prev">
  <a href="/2016/05/12/todolist-react/" title="【练手】Webpack+React开发Todolist项目">
   <i class="fa fa-long-arrow-left"></i>
   <span>
@@ -198,7 +198,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 
 
 <div class="article-next">
-<a href="/2015/09/05/second-interview/"  title="【面试次体验】堆糖前端面试">
+<a href="/2015/09/05/second-interview/" title="【面试次体验】堆糖前端面试">
  <span>【面试次体验】堆糖前端面试
 </span>
 <i class="fa fa-long-arrow-right"></i>
@@ -236,6 +236,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <ul class="entry">
     
       <li>
+        <a href="/2017/09/05/commonjsEsm/">Node.js, TC-39, and Modules</a>
+      </li>
+    
+      <li>
         <a href="/2016/05/12/todolist-react/">【练手】Webpack+React开发Todolist项目</a>
       </li>
     
@@ -265,9 +269,15 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/Webpack/">Webpack<small>1</small></a>
   
+    <a href="/tags/commonjs/">commonjs<small>1</small></a>
+  
     <a href="/tags/html5/">html5<small>1</small></a>
   
     <a href="/tags/javascript/">javascript<small>1</small></a>
+  
+    <a href="/tags/modules/">modules<small>1</small></a>
+  
+    <a href="/tags/nodejs/">nodejs<small>1</small></a>
   
     <a href="/tags/pjax/">pjax<small>1</small></a>
   
@@ -282,7 +292,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
   <footer id="footer" class="inner"><div class="padding">
 	<div class="alignleft">
 	  
-	  &copy; 2016 Kathy Miao
+	  &copy; 2019 Kathy Miao
 	  
 	  Powerd by <a href="http://hexo.io/" target="_blank">hexo</a>
 	  and Theme by <a href="https://github.com/halfer53/metro-light" target="_blank">metro-light</a>
