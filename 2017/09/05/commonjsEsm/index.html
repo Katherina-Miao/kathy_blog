@@ -140,13 +140,12 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <p>本周我第一次参加了 TC-39 会议。可能有人还不知道，TC-39 是 ECMA 工作组的编号，是他们定义了 ECMAScript 语言（或者更常见的“JavaScript”）。这个工作组敲定（通常是纠结的）并通过了 JavaScript 语言的细枝末节，以确保 JavaScript 编程语言不断发展并继续满足开发人员的需求。</p>
 <p>我本周参加 TC-39 会议的原因非常简单：TC-39 定义的一种较新的 JavaScript 语言 - 即模块 - 导致 Node.js 核心团队遇到了一些困扰。我们（主要是Bradley Farias - Twitter@bradleymeck）一直试图弄清楚如何以最好的方式使 Node.js 支持 ECMAScript 模块（ESM），又不会弄出乱子。</p>
 <p>问题实际上并不是我们无法按照目前规范定义的方式在 Node.js 中实现 ESM，而是如果完全按照规范的要求做意味着需要减少 Node.js 预期功能，开发者只能得到次优体验。我们非常希望确保 Node.js 中的 ESM 实现最优又可用。由于这个问题比较复杂，为了得到最有效的解决方案，我们与 TC-39 成员坐下来面谈。幸运的是，我认为我们取得了一些重大进展。</p>
-<p>为了能更好的解释当前的问题和我们的计划，让我花一些时间来解释一些引起了我们最关注的基本问题。</p>
-<p>然而，首先说明：以下很多内容比起实际代码情况做了过分简化。这主要是为了提供概述，而不是深入讨论模块系统。</p>
+<p>为了能更好的解释当前的问题和我们的计划，让我花一些时间来解释一些引起了我们最关注的基本问题。<br><a id="more"></a><br>然而，首先说明：以下很多内容比起实际代码情况做了过分简化。这主要是为了提供概述，而不是深入讨论模块系统。</p>
 <p>然后，再次说明：这里的一切都是基于我自己对 TC-39 对话的看法。完全有可能对一些细节有错误的理解，并且完全有可能在继续同 TC-39 讨论后，事情最终会与我在此描述的内容大不相同。我写这篇文章只是为了记录正在讨论的内容。</p>
 <h2 id="ECMAScript模块与CommonJS：或者……什么是模块？"><a href="#ECMAScript模块与CommonJS：或者……什么是模块？" class="headerlink" title="ECMAScript模块与CommonJS：或者……什么是模块？"></a>ECMAScript模块与CommonJS：或者……什么是模块？</h2><p><br>事实证明，Node.js 和 TC-39 对“模块”是什么，如何定义以及如何将它们加载到内存和使用中，有着截然不同的想法。</p>
 <p>几乎从开始，Node.js 就有了一套模块系统，源自相当松散定义的规范“CommonJS”。</p>
 <p><img src="../../../../img/commonjs.png" alt="clipboard.png"></p>
-<p>简单来说，是由一个 JavaScript 文件（诸如函数和变量）导出的标识以供另一个JavaScript 文件使用。 在 Node.js 中使用<code>require()</code>函数完成的加载。当在 Node.js中调用<code>require(“foo”)</code>时，会执行以下特定的步骤。</p>
+<p>简单来说，是由一个 JavaScript 文件（诸如函数和变量）导出的标识以供另一个 JavaScript 文件使用。 在 Node.js 中使用<code>require()</code>函数完成的加载。当在 Node.js中调用<code>require(“foo”)</code>时，会执行以下特定的步骤。</p>
 <p><img src="../../../../img/commonRequire.png" alt="clipboard.png"></p>
 <p>第一步是将标识“foo”解析为指向 Node.js 可识别的内容的绝对文件路径。此解析过程涉及多个内部步骤，本质上是遍历本地文件系统去匹配原生模块（Node.js 自带模块），JavaScript文件或JSON文档。解析步骤的结果是一个绝对文件路径，“foo”指向的内容可以从该文件路径加载到 Node.js 中并使用。</p>
 <p>加载完全取决于解析步骤生成的绝对文件路径指向的内容。例如，如果解析路径指向的内容是 Node.js 原生模块，则加载过程会将引用共享库动态关联到当前 Node.js 进程。如果指向的是 JSON 文件或 JavaScript 文件，则在验证文件存在后，文件的内容将被读入内存。值得注意的是，JavaScript Loading（加载）与 JavaScript Evaluating（执行）不同。 前者严格处理将文件的字符串内容拉入内存，而后者处理将该字符串传递给 JavaScript VM 进行解析和执行。</p>
@@ -178,14 +177,14 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;log&#125; <span class="keyword">from</span> <span class="string">"B"</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  log(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>B的代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.log = <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当我运行<code>node myapp.js</code>时，对<code>require(&#39;A&#39;)</code>的调用将检测到正在加载的东西是 ESM（参见下面有关了解如何进行此检测）。Node.js 不会使用当前用于 CommonJS 模块的包装函数加载模块，而是使用 ECMAScript 模块规范来解析，初始化和执行“A”。当解析“A”的代码并创建模块记录时，它将检测到“B”不是 ESM，因此验证由“B”导出的步骤将处于挂起状态。然后，ESM 加载程序将开始执行阶段。首先将会使用现有的 CommonJS 包装函数来执行B，其结果将被传递回 ESM 加载程序以完成模块记录的构建。其次，它将使用完成的模块记录执行“A”的代码。</p>
-<p>如何切换依赖项的顺序。 假设 A 是 CommonJS 而 B 是 ESM。在这里，不需要额外的特殊操作，因为如上例所示，可以<code>require()</code>一个ESM。</p>
+<p>如何切换依赖项的顺序。 假设 A 是 CommonJS 而 B 是 ESM。在这里，不需要额外的特殊操作，因为如上例所示，可以<code>require()</code>一个 ESM。</p>
 <p>对于绝大多数基本用例，此加载模型应该可以正常工作。但当模块之间存在依赖循环时就变得有些棘手。任何使用过具有循环依赖关系的 CommonJS 模块的人都知道，根据加载这些模块的顺序，有一些相当奇怪的边缘情况会逐渐增加。在 CommonJS 模块和 ESM 之间存在依赖循环的情况下，将存在许多相同类型的问题。</p>
 <p><img src="../../../../img/moduleCycle.png" alt="clipboard.png"></p>
 <p>myapp.js 的代码与上面的保持一致。但是，A 依赖 B，而 B 又依赖 A。</p>
 <p>A的代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b = <span class="built_in">require</span>(<span class="string">'B'</span>)</span><br><span class="line">exports.b = b.foo()</span><br><span class="line">exports.a = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>B的代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;a&#125; <span class="keyword">from</span> <span class="string">"A"</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> foo () =&gt; a</span><br></pre></td></tr></table></figure></p>
-<p>为了说明这个问题我们使用了非常刻意的例子。这种类型的循环非常难以实现，因为关联和执行ESM“B”时，标识“a”尚未被 CommonJS 模块“A”定义和输出。这类实例不得不被视作参考错误。</p>
+<p>为了说明这个问题我们使用了非常刻意的例子。这种类型的循环非常难以实现，因为关联和执行 ESM“B”时，标识“a”尚未被 CommonJS 模块“A”定义和输出。这类实例不得不被视作参考错误。</p>
 <p>但是，如果我们将B的代码更改为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> A <span class="keyword">from</span> <span class="string">"A"</span></span><br><span class="line"><span class="keyword">export</span> foo () =&gt; A.a</span><br></pre></td></tr></table></figure>
 <p>循环依赖有效，因为使用 import 语句导入 CommonJS 模块时，module.exports 对象将成为<code>default</code>导出。在这种情况下，ESM 代码关联到 CommonJS 模块的<em>默认</em>导出而不是标识。</p>
@@ -269,6 +268,14 @@ body{ -webkit-animation: bugfix infinite 1s; }
           
 <nav class="article-nav clearfix">
  
+ <div class="article-prev">
+ <a href="/2019/11/25/multiChannel-share/" title="多渠道分享实践">
+  <i class="fa fa-long-arrow-left"></i>
+  <span>
+  多渠道分享实践</span>
+</a>
+</div>
+
 
 <div class="article-next">
 <a href="/2016/05/12/todolist-react/" title="【练手】Webpack+React开发Todolist项目">
@@ -299,7 +306,7 @@ body{ -webkit-animation: bugfix infinite 1s; }
 	  <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="Search">
-    <input type="hidden" name="q" value="site:myj.name">
+    <input type="hidden" name="q" value="site:www.myj.name">
   </form>
 </div>
 	
@@ -307,6 +314,10 @@ body{ -webkit-animation: bugfix infinite 1s; }
 <div class="widget recent-post">
   <h3 class="title">Recent Posts</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2019/11/25/multiChannel-share/">多渠道分享实践</a>
+      </li>
     
       <li>
         <a href="/2017/09/05/commonjsEsm/">Node.js, TC-39, and Modules</a>
@@ -322,10 +333,6 @@ body{ -webkit-animation: bugfix infinite 1s; }
     
       <li>
         <a href="/2015/09/05/second-interview/">【面试次体验】堆糖前端面试</a>
-      </li>
-    
-      <li>
-        <a href="/2015/09/02/first-interview/">【面试初体验】今日头条面试</a>
       </li>
     
   </ul>
@@ -350,9 +357,15 @@ body{ -webkit-animation: bugfix infinite 1s; }
   
     <a href="/tags/modules/">modules<small>1</small></a>
   
+    <a href="/tags/multi-channel/">multi-channel<small>1</small></a>
+  
     <a href="/tags/nodejs/">nodejs<small>1</small></a>
   
+    <a href="/tags/open-graph/">open graph<small>1</small></a>
+  
     <a href="/tags/pjax/">pjax<small>1</small></a>
+  
+    <a href="/tags/share/">share<small>1</small></a>
   
     <a href="/tags/前端面试/">前端面试<small>2</small></a>
   
